@@ -22,7 +22,7 @@ class Application:
         original_img = Image.open(self.current_image)
         new_width = int(original_img.width * self.scale)
         new_height = int(original_img.height * self.scale)
-        img = original_img.resize((new_width, new_height), Image.ANTIALIAS)
+        img = original_img.resize((new_width, new_height))
         scaled_img = ImageTk.PhotoImage(img)
         self.image_label = tk.Label(self.root, image=scaled_img)
         self.image_label.image = scaled_img
@@ -41,9 +41,9 @@ class Application:
         self.root.title("liikennemerkki opiskelu työkaly")
         self.root.geometry("1200x800")
         next_button = tk.Button(self.root, text="next", command=self.change_image)
-        # reveal_button = tk.Button(self.root, text="reveal", command=self.reveal_name)
+        reveal_button = tk.Button(self.root, text="reveal", command=self.reveal_name)
         next_button.pack()
-        # reveal_button.pack()
+        reveal_button.pack()
 
 if __name__ == "__main__":
     root = tk.Tk()
