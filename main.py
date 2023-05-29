@@ -1,6 +1,4 @@
-from functools import singledispatch
-import os
-import random
+import random, os
 import tkinter as tk
 from PIL import ImageTk, Image
 
@@ -35,6 +33,7 @@ class Application:
         sign_name.pop(0)
         sign_name = " ".join(sign_name)
         self.image_label = tk.Label(self.root, text=sign_name)
+        self.image_label.config(font=("TkDefaultFont", 40))
         self.image_label.pack()
 
     def init_window(self):
